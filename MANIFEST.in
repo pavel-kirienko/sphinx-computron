@@ -1,2 +1,0 @@
-include LICENSE.txt AUTHORS README.rst
-recursive-include sphinx_computron *.py

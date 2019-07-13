@@ -22,19 +22,20 @@ Options are:
 
 filename
     If specified, will load code from a file (relative to sphinx doc root)
-    and ignore content.
+    and prepend that to the directive's content before its execution.
 
 computron_injection
 --------------------
-Running 'computron_injection' as a directive allows the administrator to embed exact
-python code as if it was pasted in a normal code-block.
 
-Executing python code and showing the result output::
+Executing python code and parsing output as ReST::
 
     .. computron_injection::
 
         print('*This is interpreted as ReST!*')
 
+
+Whatever is written into stdout is collected and the injected in-place into
+the document. Stderr is not captured.
 
 Executing python code from a file
 ---------------------------------
