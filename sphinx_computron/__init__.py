@@ -1,5 +1,5 @@
 """
-The module sphinx-computron provides the "computron_injection" directive for Sphinx.
+The module sphinx_computron provides the "computron-injection" directive for Sphinx.
 See README.rst for documentation details.
 Originally authored by JP Senior, forked and reworked by Pavel Kirienko.
 """
@@ -62,5 +62,5 @@ def _execute_python_collect_stdout(source: str) -> str:
 
 
 def setup(app):
-    app.add_directive('computron_injection', ComputronInjectionDirective)
+    app.add_directive('computron-injection', ComputronInjectionDirective)
     return {}

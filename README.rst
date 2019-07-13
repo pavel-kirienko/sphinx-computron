@@ -24,12 +24,12 @@ filename
     If specified, will load code from a file (relative to sphinx doc root)
     and prepend that to the directive's content before its execution.
 
-computron_injection
+computron-injection
 --------------------
 
 Executing python code and parsing output as ReST::
 
-    .. computron_injection::
+    .. computron-injection::
 
         print('*This is interpreted as ReST!*')
 
@@ -39,12 +39,12 @@ the document. Stderr is not captured.
 
 Executing python code from a file
 ---------------------------------
-computron_injection also allows you to import a python file and execute
+computron-injection also allows you to import a python file and execute
 it within a document.
 
 Running a Python file::
 
-    .. computron_injection::
+    .. computron-injection::
        :filename: my_class.py
 
 
