@@ -4,7 +4,7 @@ from setuptools import setup
 
 def readme():
     """ Returns Readme.rst as loaded RST for documentation """
-    with open('Readme.rst', 'r') as filename:
+    with open('README.rst', 'r') as filename:
         return filename.read()
 setup(
     name='sphinx_computron',
