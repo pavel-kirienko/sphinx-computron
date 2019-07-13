@@ -1,3 +1,2 @@
-include LICENSE.txt AUTHORS Readme.rst
-recursive-include sphinx_execute_code *.py
-recursive-include tests *.py
+include LICENSE.txt AUTHORS README.rst
+recursive-include sphinx_computron *.py
