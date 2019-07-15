@@ -41,8 +41,10 @@ Executing python code from a file
 ---------------------------------
 computron-injection also allows you to import a python file and execute
 it within a document.
+The path is specified relative to the source ReST file where the
+directive is encountered.
 
-Running a Python file::
+Running a Python file in the same directory::
 
     .. computron-injection::
        :filename: my_class.py

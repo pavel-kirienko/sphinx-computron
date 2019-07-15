@@ -4,9 +4,9 @@ See README.rst for documentation details.
 Originally authored by JP Senior, forked and reworked by Pavel Kirienko.
 """
 
-import os
 import io
 import sys
+import pathlib
 
 import docutils.nodes
 import docutils.parsers.rst
@@ -20,6 +20,7 @@ class ComputronInjectionDirective(docutils.parsers.rst.Directive):
     required_arguments = 0
     optional_arguments = 1
 
+    # noinspection PyUnresolvedReferences
     option_spec = {
         'filename': docutils.parsers.rst.directives.path,
     }
@@ -28,13 +29,16 @@ class ComputronInjectionDirective(docutils.parsers.rst.Directive):
         filename = self.options.get('filename')
         source = ''
         if filename is not None:
-            with open(filename, 'r') as source_file:
+            host_file = self.state_machine.document.current_source
+            assert isinstance(host_file, str)
+            abs_filename = pathlib.Path(host_file).absolute().parent / filename
+            with open(str(abs_filename), 'r') as source_file:
                 source = source_file.read() + '\n'
         source += '\n'.join(self.content)
 
         execution_output = _execute_python_collect_stdout(source)
 
-        vl = docutils.statemachine.ViewList()
+        vl = docutils.statemachine.StringList()
         for index, el in enumerate(execution_output.splitlines()):
             vl.append(el, '<computron-injection-output>', index + 1)
 
