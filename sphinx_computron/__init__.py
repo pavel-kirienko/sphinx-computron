@@ -63,4 +63,6 @@ def _execute_python_collect_stdout(source: str) -> str:
 
 def setup(app):
     app.add_directive('computron-injection', ComputronInjectionDirective)
-    return {}
+    return {
+        'parallel_read_safe': True,
+    }
