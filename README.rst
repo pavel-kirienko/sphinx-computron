@@ -16,6 +16,8 @@ His version of the package appears to be unmantained so I decided to salvage
 it by making a hard fork. The name had to be changed to avoid collisions
 with his version published on PyPI.
 
+The package is available on PyPI as `sphinx-computron <https://pypi.org/project/sphinx-computron/>`_.
+
 Options
 -------
 Options are:
