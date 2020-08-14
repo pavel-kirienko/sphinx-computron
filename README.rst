@@ -55,7 +55,7 @@ Running a Python file in the same directory::
     .. computron-injection::
        :filename: my_class.py
 
-With arguments ``['Hello', 'world!']``:
+With arguments ``['Hello', 'world!']``::
 
     .. computron-injection::
        :filename: my_class.py
