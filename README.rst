@@ -20,11 +20,15 @@ The package is available on PyPI as `sphinx-computron <https://pypi.org/project/
 
 Options
 -------
-Options are:
 
 filename
     If specified, will load code from a file (relative to sphinx doc root)
     and prepend that to the directive's content before its execution.
+
+argv
+    Passes the specified whitespace-separated arguments to the script.
+    If specified: ``sys.argv = [filename] + argv.split()``.
+    If not specified: ``sys.argv = [filename]``.
 
 computron-injection
 --------------------
@@ -50,6 +54,12 @@ Running a Python file in the same directory::
 
     .. computron-injection::
        :filename: my_class.py
+
+With arguments ``['Hello', 'world!']``:
+
+    .. computron-injection::
+       :filename: my_class.py
+       :argv: Hello world!
 
 
 Activating on Sphinx

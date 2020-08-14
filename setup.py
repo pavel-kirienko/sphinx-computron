@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='sphinx_computron',
-    version='0.1.0',
+    version='0.2.0',
     packages=['sphinx_computron'],
     url='https://github.com/pavel-kirienko/sphinx-computron',
     license='MIT',
